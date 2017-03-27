@@ -1,0 +1,11 @@
+prefix=/mnt/c/Users/Johannes/Documents/GitHub/sdsl-lite-install
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: sdsl
+Description: The Succinct Data Structure Library
+Version: 3.0.0
+URL: https://github.com/xxsds/sdsl-lite
+Libs: -L${libdir} -ldivsufsort -ldivsufsort64
+Cflags: -I${includedir}

@@ -1,0 +1,32 @@
+{
+    "files.associations": {
+        "*.cmake": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hppstack": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hppxutility": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hppqueue": "cpp",
+        "queue": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpparray": "cpp",
+        "*hpp*hpp*hppregex": "cpp",
+        "valarray": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hppxmemory0": "cpp",
+        "xmemory0": "cpp",
+        "ostream": "cpp",
+        "stack": "cpp",
+        "functional": "cpp",
+        "*hxutility": "cpp",
+        "*h*htuple": "cpp",
+        "*h*h__config": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "*cppfuture": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hppstack": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hppqueue": "cpp",
+        "*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpp*hpparray": "cpp",
+        "*hpp*hpp*hpp*h*h*h*h*h*h*c*cpp*h*c*cvalarray": "cpp",
+        "random": "cpp",
+        "*hpp*hppxutility": "cpp",
+        "*h*h*h*h*h*h*h*c*c*c*c*c*c*c*c*c*c__refstring": "cpp",
+        "xlocale": "cpp",
+        "*h*h*h*h*c__locale": "cpp"
+    }
+}
