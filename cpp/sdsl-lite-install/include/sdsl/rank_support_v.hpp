@@ -73,7 +73,15 @@ public:
 		uint64_t carry			  = trait_type::init_carry();
 		uint64_t sum			  = trait_type::args_in_the_word(*data, carry);
 		uint64_t second_level_cnt = 0;
+				// std::cout << "T: " << (int)t_b << " " << (int)t_pat_len << std::endl;
+				// std::cout << "SIZE: " << v->size() << std::endl;
+				// std::cout << "CAP: " << v->capacity() << std::endl;
+				// uint64_t s = 0;
+				// for (i = 0; i < v->size() >> 6; ++i) s += v->data()[i];
+				// std::cout << "SUM: " << s << std::endl;
+
 		for (i = 1; i < (m_v->capacity() >> 6); ++i) {
+			// if (i % 100 == 1) std::cout << j << " " << second_level_cnt << " " << sum << std::endl;
 			if (!(i & 0x7)) { // if i%8==0
 				j += 2;
 				m_basic_block[j - 1] = second_level_cnt;
@@ -93,6 +101,20 @@ public:
 			m_basic_block[j]	 = m_basic_block[j - 2] + sum;
 			m_basic_block[j + 1] = 0;
 		}
+		// std::cout
+		// 	<< (v->data()[0]) << " "
+		// 	<< (v->data()[1]) << " "
+		// 	<< (v->data()[2]) << " "
+		// 	<< (v->data()[3]) << " "
+		// 	<< (v->data()[4]) << " "
+		// 	<< std::endl;
+		// std::cout
+		// 	<< m_basic_block.data()[0] << " "
+		// 	<< m_basic_block.data()[1] << " "
+		// 	<< m_basic_block.data()[2] << " "
+		// 	<< m_basic_block.data()[3] << " "
+		// 	<< m_basic_block.data()[4] << " "
+		// 	<< std::endl;
 	}
 
 	rank_support_v(const rank_support_v&) = default;
@@ -107,24 +129,6 @@ public:
 		assert(idx <= m_v->size());
 		const uint64_t* p =
 		m_basic_block.data() + ((idx >> 8) & 0xFFFFFFFFFFFFFFFEULL); // (idx/512)*2
-		if (idx == 2758400)
-		{
-			std::cout << ((idx >> 8) & 0xFFFFFFFFFFFFFFFEULL) << std::endl;
-			std::cout
-				<< m_basic_block.data()[0] << " "
-				<< m_basic_block.data()[1] << " "
-				<< m_basic_block.data()[2] << " "
-				<< m_basic_block.data()[3] << " "
-				<< m_basic_block.data()[4] << " "
-				<< std::endl;
-			std::cout
-				<< p[0] << " "
-				<< p[1] << " "
-				<< p[2] << " "
-				<< p[3] << " "
-				<< p[4] << " "
-				<< std::endl;
-		}
 		if (idx & 0x3F)												 // if (idx%64)!=0
 			return *p + ((*(p + 1) >> (63 - 9 * ((idx & 0x1FF) >> 6))) & 0x1FF) +
 				   trait_type::word_rank(m_v->data(), idx);

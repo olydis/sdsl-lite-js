@@ -299,12 +299,6 @@ public:
 		node_type v = m_tree.root();		  // start at root node
 		while (!m_tree.is_leaf(v)) {		  // while  not a leaf
 			if (m_bv[m_tree.bv_pos(v) + i]) { // goto right child
-				if (i == 6 && (m_tree.bv_pos(v) + i) == 2758400) {
-					std::cout << "BEFORE" << std::endl;
-					std::cout << m_tree.bv_pos_rank(v) << std::endl;
-					//std::cout << m_bv_rank.size() << " " << m_bv_rank(m_tree.bv_pos(v) + i) << " " << m_tree.bv_pos_rank(v) << std::endl;
-					std::cout << "AFTER" << std::endl;
-				}
 				i = m_bv_rank(m_tree.bv_pos(v) + i) - m_tree.bv_pos_rank(v);
 				v = m_tree.child(v, 1);
 			} else { // goto the left child

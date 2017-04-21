@@ -491,8 +491,8 @@ struct bits_impl {
 template<typename T>
 inline uint64_t bits_impl<T>::cnt(uint64_t x)
 {
-#if 1
-	return __builtin_popcountll(x);
+#if 0
+	return __builtin_popcountll(x); // BUGGY
 #else
 #ifdef POPCOUNT_TL
 	return lt_cnt[x & 0xFFULL] + lt_cnt[(x >> 8) & 0xFFULL] + lt_cnt[(x >> 16) & 0xFFULL] +

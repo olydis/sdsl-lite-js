@@ -89,7 +89,6 @@ void calculate_sa(const unsigned char* c, typename t_int_vec::size_type len, t_i
 		return;
 	}
 	bool small_file = (sizeof(len) <= 4 or len < 0x7FFFFFFFULL);
-	std::cout << "OUCH " << small_file << std::endl;
 	if (small_file) {
 		uint8_t sa_width = sa.width();
 		if (32 == t_width or (0 == t_width and 32 >= sa_width)) {
