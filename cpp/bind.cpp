@@ -1,5 +1,7 @@
 #include <sdsl/suffix_trees.hpp>
+#include <sdsl/suffix_arrays.hpp>
 #include <iostream>
+#include <emscripten/bind.h>
 
 using namespace std;
 using namespace sdsl;
@@ -7,16 +9,10 @@ using namespace sdsl;
 typedef cst_sct3<> cst_t;
 typedef cst_t::char_type char_type;
 
-int main(int argc, char* argv[])
+void func()
 {
-    if (argc < 2) {
-        cout << "Usage: "<< argv[0] << " file" << endl;
-        cout << "(1) Generates the CST of file." << endl;
-        cout << "(2) Calculates the avg LCP value and the runs in the BWT." << endl;
-        return 1;
-    }
     cst_t cst;
-    construct(cst, argv[1], 1);
+    construct_im(cst, "Hello KIT", 1);
 
     long double runs = 1;
     long double avg_lcp = 0;
@@ -40,4 +36,18 @@ int main(int argc, char* argv[])
         cout << "runs in BWT: " << runs << endl;
 
     }
+}
+
+void csa()
+{
+    csa_sada<> csa;
+    construct_im(csa, "Hello KIT", 1);
+    for (int i = 0; i < csa.size(); ++i)
+        cout << "sa[" << i << "] = " << csa[i] << endl;
+}
+
+EMSCRIPTEN_BINDINGS()
+{
+    emscripten::function("func", &func);
+    emscripten::function("csa", &csa);
 }
