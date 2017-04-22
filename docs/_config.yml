@@ -1,1 +1,3 @@
 theme: jekyll-theme-cayman
+name: Succinct Data Structure Library
+description: JavaScript port of Simon Gog's popular [C++ library](https://github.com/simongog/sdsl-lite)
