@@ -1,0 +1,35 @@
+{
+  "name": "sdsl-lite",
+  "version": "0.9.0",
+  "description": "JavaScript port of Simon Gog's popular Succinct Data Structure Library (https://github.com/simongog/sdsl-lite)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olydis/sdsl-lite-js.git"
+  },
+  "keywords": [
+    "sdsl",
+    "sdsl-lite",
+    "Succinct",
+    "Data",
+    "Structure",
+    "Library",
+    "Simon",
+    "Gog"
+  ],
+  "author": "olydis",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/olydis/sdsl-lite-js/issues"
+  },
+  "homepage": "https://github.com/olydis/sdsl-lite-js#readme",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
