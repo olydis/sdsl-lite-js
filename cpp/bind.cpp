@@ -2,6 +2,7 @@
 #include <sdsl/suffix_arrays.hpp>
 #include <iostream>
 #include <emscripten/bind.h>
+#include <vector>
 
 using namespace std;
 using namespace sdsl;
@@ -38,16 +39,40 @@ void func()
     }
 }
 
-void csa()
+void csa(vector<int> text)
 {
+    cout << text.size() << endl;
     csa_sada<> csa;
-    construct_im(csa, "Hello KIT", 1);
+    construct_im(csa, text, 1);
     for (int i = 0; i < csa.size(); ++i)
         cout << "sa[" << i << "] = " << csa[i] << endl;
 }
 
+class SaBuilder
+{
+public:
+    string text;
+    vector<int> sa;
+
+    void Build()
+    {
+        csa_sada<> csa;
+        construct_im(csa, text.c_str(), 1);
+        sa.resize(csa.size());
+        for (int i = 0; i < csa.size(); ++i)
+            sa[i] = csa[i];
+    }
+};
+
 EMSCRIPTEN_BINDINGS()
 {
+    emscripten::register_vector<int>("VectorInt");
     emscripten::function("func", &func);
     emscripten::function("csa", &csa);
+    emscripten::class_<SaBuilder>("SaBuilder")
+        .constructor<>()
+        .function("Build", &SaBuilder::Build)
+        .property("text", &SaBuilder::text)
+        .property("sa", &SaBuilder::sa)
+        ;
 }
