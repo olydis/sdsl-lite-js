@@ -8,26 +8,18 @@ function toCharArray(s) {
         res[i] = s.charCodeAt(i);
     return res;
 }
-function toVector(a) {
-    var res = new bind.VectorInt();
-    for (var _i = 0, a_1 = a; _i < a_1.length; _i++) {
-        var x = a_1[_i];
-        res.push_back(x);
-    }
-    return res;
-}
+// function toVector(a)
+// {
+//     const res = new bind.VectorInt();
+//     for (var x of a) res.push_back(x);
+//     return res;
+// }
 function sa(text) {
-    var saBuilder = new bind.SaBuilder();
-    saBuilder.text = text;
-    //const textArray = toCharArray(text);
-    //saBuilder.text.resize(textArray.size);
-    //for (let i = 0; i < textArray.size; ++i) 
-    //    saBuilder.text.push_back(textArray[i]);
-    saBuilder.Build();
-    var result = [];
-    for (var i = 0; i < saBuilder.sa.size(); ++i)
-        result.push(saBuilder.sa.get(i));
-    saBuilder["delete"]();
+    var csa = bind.Csa.CreateFromString(text);
+    var result = new Array(csa.SaSize());
+    for (var i = 0; i < result.length; ++i)
+        result[i] = csa.SaGet(i);
+    csa["delete"]();
     return result;
 }
 var input = "Hello KIT";

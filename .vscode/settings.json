@@ -58,6 +58,7 @@
         "xiosbase": "cpp",
         "*hpp*hpp*hpp*hppxutility": "cpp",
         "iostream": "cpp",
-        "*hpp*hpp*hxlocale": "cpp"
+        "*hpp*hpp*hxlocale": "cpp",
+        "memory": "cpp"
     }
 }

@@ -48,31 +48,34 @@ void csa(vector<int> text)
         cout << "sa[" << i << "] = " << csa[i] << endl;
 }
 
-class SaBuilder
+class Csa
 {
-public:
-    string text;
-    vector<int> sa;
+    csa_sada<> csa;
 
-    void Build()
-    {
-        csa_sada<> csa;
-        construct_im(csa, text.c_str(), 1);
-        sa.resize(csa.size());
-        for (int i = 0; i < csa.size(); ++i)
-            sa[i] = csa[i];
+public:
+    int SaGet(int index) {
+        return csa[index];
+    }
+    int SaSize() {
+        return csa.size();
+    }
+
+    static auto CreateFromString(string text) {
+        unique_ptr<Csa>/*Csa*/ result(new Csa());
+        construct_im(result->csa, text.c_str(), 1);
+        return result;
     }
 };
 
 EMSCRIPTEN_BINDINGS()
 {
-    emscripten::register_vector<int>("VectorInt");
+    //emscripten::register_vector<int>("VectorInt");
     emscripten::function("func", &func);
     emscripten::function("csa", &csa);
-    emscripten::class_<SaBuilder>("SaBuilder")
+    emscripten::class_<Csa>("Csa")
         .constructor<>()
-        .function("Build", &SaBuilder::Build)
-        .property("text", &SaBuilder::text)
-        .property("sa", &SaBuilder::sa)
+        .function("SaGet", &Csa::SaGet)
+        .function("SaSize", &Csa::SaSize)
+        .class_function("CreateFromString", &Csa::CreateFromString, emscripten::allow_raw_pointers())
         ;
 }
