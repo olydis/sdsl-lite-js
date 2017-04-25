@@ -1,1 +1,27 @@
-Hello World
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></script>
+        <script>
+            require.config({
+                paths: {
+                    "cpp/build/bind": "../cpp/build/bind",
+                    "../../index": "../index",
+                    "jquery": "https://code.jquery.com/jquery-3.2.0.min"
+                }
+            });
+            require(
+                ["cpp/build/bind", "jquery"],
+                () => require(
+                        ["../../index"],
+                        () => require(["script/index.js"], 
+                        () => {})),
+                () => {});
+            var exports = {};
+        </script>
+    </head>
+    <body>
+        <input id="iText"></input>
+        <table id="oCsaData">
+        </table>
+    </body>
+</html>

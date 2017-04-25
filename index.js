@@ -1,10 +1,11 @@
 "use strict";
-exports.__esModule = true;
-var bind = require("./cpp/build/bind");
+Object.defineProperty(exports, "__esModule", { value: true });
+const bind = require("./cpp/build/bind");
+exports.Csa = bind.Csa;
 // bind.func();
 function toCharArray(s) {
-    var res = new Array(s.length);
-    for (var i = 0; i < s.length; ++i)
+    const res = new Array(s.length);
+    for (let i = 0; i < s.length; ++i)
         res[i] = s.charCodeAt(i);
     return res;
 }
@@ -14,15 +15,24 @@ function toCharArray(s) {
 //     for (var x of a) res.push_back(x);
 //     return res;
 // }
-function sa(text) {
-    var csa = bind.Csa.CreateFromString(text);
-    var result = new Array(csa.SaSize());
-    for (var i = 0; i < result.length; ++i)
-        result[i] = csa.SaGet(i);
-    csa["delete"]();
+const text = "Hello KIT";
+function GetArray(size, get) {
+    const result = new Array(size);
+    for (let i = 0; i < size; ++i)
+        result[i] = get(i);
     return result;
 }
-var input = "Hello KIT";
-var output = sa(input);
-console.log(input);
-console.log(output);
+const csa = bind.Csa.CreateFromString(text);
+const size = csa.Size();
+const sa = GetArray(size, i => csa.Sa(i));
+const lf = GetArray(size, i => csa.Lf(i));
+const isa = GetArray(size, i => csa.Isa(i));
+const psi = GetArray(size, i => csa.Psi(i));
+const bwt = GetArray(size, i => String.fromCharCode(csa.Bwt(i)));
+csa.delete();
+console.log(text);
+console.log(sa);
+console.log(lf);
+console.log(isa);
+console.log(psi);
+console.log(bwt);

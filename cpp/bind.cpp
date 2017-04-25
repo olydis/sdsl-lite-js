@@ -53,15 +53,27 @@ class Csa
     csa_sada<> csa;
 
 public:
-    int SaGet(int index) {
+    int Size() {
+        return csa.size();
+    }
+    int Sa(int index) {
         return csa[index];
     }
-    int SaSize() {
-        return csa.size();
+    int Lf(int index) {
+        return csa.lf[index];
+    }
+    int Isa(int index) {
+        return csa.isa[index];
+    }
+    int Psi(int index) {
+        return csa.psi[index];
+    }
+    int Bwt(int index) {
+        return csa.bwt[index];
     }
 
     static auto CreateFromString(string text) {
-        unique_ptr<Csa>/*Csa*/ result(new Csa());
+        unique_ptr<Csa> result(new Csa());
         construct_im(result->csa, text.c_str(), 1);
         return result;
     }
@@ -74,8 +86,12 @@ EMSCRIPTEN_BINDINGS()
     emscripten::function("csa", &csa);
     emscripten::class_<Csa>("Csa")
         .constructor<>()
-        .function("SaGet", &Csa::SaGet)
-        .function("SaSize", &Csa::SaSize)
+        .function("Size", &Csa::Size)
+        .function("Sa", &Csa::Sa)
+        .function("Lf", &Csa::Lf)
+        .function("Isa", &Csa::Isa)
+        .function("Psi", &Csa::Psi)
+        .function("Bwt", &Csa::Bwt)
         .class_function("CreateFromString", &Csa::CreateFromString, emscripten::allow_raw_pointers())
         ;
 }

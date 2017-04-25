@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/olydis/sdsl-lite-js#readme",
   "devDependencies": {
+    "@types/jquery": "^2.0.41",
     "mocha": "^3.2.0"
   }
 }
