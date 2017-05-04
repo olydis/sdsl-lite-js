@@ -12,3 +12,7 @@ yaml
 ## more stuff
 
 > is that so
+
+## script
+
+<script>document.title="shabloofski";</script>
