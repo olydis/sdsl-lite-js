@@ -59,6 +59,9 @@
         "*hpp*hpp*hpp*hppxutility": "cpp",
         "iostream": "cpp",
         "*hpp*hpp*hxlocale": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "*h*h__locale": "cpp",
+        "codecvt": "cpp",
+        "*hpp*hpp*hpp*hpp*hpprandom": "cpp"
     }
 }

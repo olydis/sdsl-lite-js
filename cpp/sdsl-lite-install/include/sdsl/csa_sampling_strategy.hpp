@@ -69,8 +69,10 @@ public:
          */
 	_sa_order_sampling(const cache_config& cconfig, SDSL_UNUSED const t_csa* csa = nullptr)
 	{
+	std::cout << "a" << std::endl;
 		int_vector_buffer<> sa_buf(cache_file_name(conf::KEY_SA, cconfig));
 		size_type			n = sa_buf.size();
+	std::cout << n << std::endl;
 		this->width(bits::hi(n) + 1);
 		this->resize((n + sample_dens - 1) / sample_dens);
 
@@ -81,6 +83,7 @@ public:
 				base_type::operator[](cnt_sum++) = sa;
 			}
 		}
+	std::cout << "b" << std::endl;
 	}
 
 	//! Determine if index i is sampled or not
