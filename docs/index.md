@@ -1,8 +1,9 @@
 # Demos
 
-## Demo 1
+## Compressed Suffix Array
 
-<input id="input1">
+<input id="input1" value="mississippi!" class="inputText">
+<!--<button>Update</button>-->
 
 | loading     |
 |-------------|
