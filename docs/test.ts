@@ -19,7 +19,7 @@ function next(elem: JQuery, query: string): JQuery {
 $(() => {
     const iText = $("#input1");
     const oCsaData = next(iText, "table");
-    iText.change(() => {
+    const update = () => {
         const text = iText.val();
 
         const csa = Csa.CreateFromString(text);
@@ -33,13 +33,13 @@ $(() => {
 
         oCsaData.children().remove();
         oCsaData.append($("<tr>")
-            .append($("<td>").text("i"))
-            .append($("<td>").text("Text"))
-            .append($("<td>").text("SA"))
-            .append($("<td>").text("LF"))
-            .append($("<td>").text("ISA"))
-            .append($("<td>").text("PSI"))
-            .append($("<td>").text("BWT")));
+            .append($("<th>").text("i"))
+            .append($("<th>").text("Text"))
+            .append($("<th>").text("SA"))
+            .append($("<th>").text("LF"))
+            .append($("<th>").text("ISA"))
+            .append($("<th>").text("PSI"))
+            .append($("<th>").text("BWT")));
         for (let i = 0; i < size; ++i) {
             oCsaData.append($("<tr>")
                 .append($("<td>").text(`${i}`))
@@ -50,5 +50,7 @@ $(() => {
                 .append($("<td>").text(psi[i]))
                 .append($("<td>").text(bwt[i])));
         }
-    });
+    };
+    iText.change(update);
+    update();
 });
