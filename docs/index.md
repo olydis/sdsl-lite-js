@@ -1,5 +1,7 @@
 # Demos
 
+The following demos demonstrate some features of sdsl-lite-js.
+
 ---
 ## Compressed Suffix Array
 
