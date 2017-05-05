@@ -4,6 +4,7 @@ title: >-
   <style>
     input, button {
       height: 2em;
+      padding: 4px;
     }
   </style>
 description: >-
