@@ -1,5 +1,6 @@
 # Demos
 
+---
 ## Compressed Suffix Array
 
 Text: <input id="input1" value="mississippi!" style="font-family: monospace;">
@@ -10,6 +11,7 @@ Text: <input id="input1" value="mississippi!" style="font-family: monospace;">
 | please wait |
 
 
+---
 ## Markdown Test Area
 
 ``` yaml
