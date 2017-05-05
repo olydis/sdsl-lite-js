@@ -10,9 +10,14 @@ function GetArray<T>(size: number, get: (index: number) => T): T[]
 
 const nullString = "$";
 
+function next(elem: JQuery, query: string): JQuery {
+    const result = elem.next(query);
+    return result.length > 0 ? result : next(elem.parent(), query);
+}
+
 $(() => {
     const iText = $("#input1");
-    const oCsaData = iText.next("table");
+    const oCsaData = next(iText, "table");
     iText.change(() => {
         const text = iText.val();
 

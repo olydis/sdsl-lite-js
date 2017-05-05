@@ -9,9 +9,13 @@ function GetArray(size, get) {
     return result;
 }
 const nullString = "$";
+function next(elem, query) {
+    const result = elem.next(query);
+    return result.length > 0 ? result : next(elem.parent(), query);
+}
 $(() => {
     const iText = $("#input1");
-    const oCsaData = iText.next("table");
+    const oCsaData = next(iText, "table");
     iText.change(() => {
         const text = iText.val();
         const csa = index_1.Csa.CreateFromString(text);
