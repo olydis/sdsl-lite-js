@@ -2,7 +2,7 @@
 
 ## Compressed Suffix Array
 
-Text: <input id="input1" value="mississippi!" class="font-family: monospace;">
+Text: <input id="input1" value="mississippi!" style="font-family: monospace;">
 <!--<button>Update</button>-->
 
 | loading     |
