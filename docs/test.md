@@ -17,8 +17,9 @@ yaml
 
 <input id="input1">
 
-| loading |
-|---------|
+| loading     |
+|-------------|
+| please wait |
 
 
 

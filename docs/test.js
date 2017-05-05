@@ -10,6 +10,8 @@ function GetArray(size, get) {
 }
 const nullString = "$";
 function next(elem, query) {
+    if (elem.length === 0)
+        throw "not found";
     const result = elem.next(query);
     return result.length > 0 ? result : next(elem.parent(), query);
 }

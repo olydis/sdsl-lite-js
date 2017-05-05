@@ -11,6 +11,7 @@ function GetArray<T>(size: number, get: (index: number) => T): T[]
 const nullString = "$";
 
 function next(elem: JQuery, query: string): JQuery {
+    if (elem.length === 0) throw "not found";
     const result = elem.next(query);
     return result.length > 0 ? result : next(elem.parent(), query);
 }
