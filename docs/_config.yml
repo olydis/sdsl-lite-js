@@ -6,6 +6,12 @@ title: >-
       height: 2em;
       padding: 4px;
     }
+    tr, input {
+      font-family: monospace;
+    }
+    tr {
+      text-align: right;
+    }
   </style>
 description: >-
   JavaScript port of <a style='color: inherit' href='https://github.com/simongog/sdsl-lite'>Simon Gog's popular C++ library</a>
