@@ -1,6 +1,13 @@
-# Hello
+## Demo 1
 
-What's up
+<input id="input1">
+
+| loading     |
+|-------------|
+| please wait |
+
+
+## Markdown Test Area
 
 ``` yaml
 this: is
@@ -9,17 +16,7 @@ yaml
  - yes
 ```
 
-## more stuff
-
-> is that so
-
-## Demo 1
-
-<input id="input1">
-
-| loading     |
-|-------------|
-| please wait |
+> markdown stuff
 
 
 
@@ -41,7 +38,7 @@ yaml
                 ["./bind"],
                 () => require(
                         ["./lib/index", "jquery"],
-                        () => require(["test.js"], 
+                        () => require(["index.js"], 
                         () => {})),
                 () => {});
         }
