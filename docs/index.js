@@ -48,6 +48,6 @@ $(() => {
                 .append($("<td>").text(bwt[i])));
         }
     };
-    iText.change(update);
+    iText.on("input", update);
     update();
 });

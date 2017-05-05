@@ -8,9 +8,9 @@ The following demos demonstrate some features of sdsl-lite-js.
 > Text &nbsp; <input id="input1" value="mississippi!" style="font-family: monospace;">
 <!--<button>Update</button>-->
 
-| loading     |
-|-------------|
-| please wait |
+| loading |
+|---------|
+| ...     |
 
 
 ---
