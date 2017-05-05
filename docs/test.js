@@ -1,30 +1,27 @@
-import { Csa } from "../../index";
-import * as $ from "jquery";
-
-function GetArray<T>(size: number, get: (index: number) => T): T[]
-{
-    const result: T[] = new Array(size);
-    for (let i = 0; i < size; ++i) result[i] = get(i);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const index_1 = require("./lib/index");
+const $ = require("jquery");
+function GetArray(size, get) {
+    const result = new Array(size);
+    for (let i = 0; i < size; ++i)
+        result[i] = get(i);
     return result;
 }
-
 const nullString = "$";
-
 $(() => {
-    const iText = $("#iText");
-    const oCsaData = $("#oCsaData");
+    const iText = $("#input1");
+    const oCsaData = iText.next("table");
     iText.change(() => {
         const text = iText.val();
-
-        const csa = Csa.CreateFromString(text);
+        const csa = index_1.Csa.CreateFromString(text);
         const size = csa.Size();
-        const sa = GetArray<number>(size, i => csa.Sa(i));
-        const lf = GetArray<number>(size, i => csa.Lf(i));
-        const isa = GetArray<number>(size, i => csa.Isa(i));
-        const psi = GetArray<number>(size, i => csa.Psi(i));
-        const bwt = GetArray<string>(size, i => String.fromCharCode(csa.Bwt(i) || nullString.charCodeAt(0)));
+        const sa = GetArray(size, i => csa.Sa(i));
+        const lf = GetArray(size, i => csa.Lf(i));
+        const isa = GetArray(size, i => csa.Isa(i));
+        const psi = GetArray(size, i => csa.Psi(i));
+        const bwt = GetArray(size, i => String.fromCharCode(csa.Bwt(i) || nullString.charCodeAt(0)));
         csa.delete();
-
         oCsaData.children().remove();
         oCsaData.append($("<tr>")
             .append($("<td>").text("i"))

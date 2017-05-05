@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("../../index");
+const index_1 = require("./lib/index");
 const $ = require("jquery");
 function GetArray(size, get) {
     const result = new Array(size);

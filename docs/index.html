@@ -4,16 +4,15 @@
         <script>
             require.config({
                 paths: {
-                    "cpp/build/bind": "../cpp/build/bind",
-                    "../../index": "../index",
+                    "bind": "./lib/bind",
                     "jquery": "https://code.jquery.com/jquery-3.2.0.min"
                 }
             });
             require(
-                ["cpp/build/bind", "jquery"],
+                ["./bind"],
                 () => require(
-                        ["../../index"],
-                        () => require(["script/index.js"], 
+                        ["./lib/index", "jquery"],
+                        () => require(["index.js"], 
                         () => {})),
                 () => {});
             var exports = {};

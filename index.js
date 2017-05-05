@@ -1,13 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const bind = require("./cpp/build/bind");
-exports.Csa = bind.Csa;
-// bind.func();
-function toCharArray(s) {
-    const res = new Array(s.length);
-    for (let i = 0; i < s.length; ++i)
-        res[i] = s.charCodeAt(i);
-    return res;
-}
+const lib = require("./lib/index");
+exports = lib;
 if (typeof define !== "undefined")
     define([], () => exports);
