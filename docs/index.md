@@ -1,3 +1,5 @@
+# Demos
+
 ## Demo 1
 
 <input id="input1">
@@ -22,6 +24,7 @@ yaml
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></script>
 <script>
+    document.title = "SDSL \u2013 " + document.title;
     var exports = {};
     var main = () => {
         if (typeof require === "undefined")
