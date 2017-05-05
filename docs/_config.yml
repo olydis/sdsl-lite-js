@@ -6,10 +6,10 @@ title: >-
       height: 2em;
       padding: 4px;
     }
-    tr, input {
+    td, input {
       font-family: monospace;
     }
-    tr {
+    td {
       text-align: right;
     }
   </style>
