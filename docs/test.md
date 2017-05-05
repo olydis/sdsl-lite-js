@@ -15,7 +15,7 @@ yaml
 
 ## Demo 1
 
-<input id="input1"></input>
+<input id="input1">
 
 | this | is | a | table | test |
 |------|----|---|-------|------|
