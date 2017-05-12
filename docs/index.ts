@@ -48,7 +48,7 @@ $(() => {
                 .append($("<td>").addClass(`i${sa[lf[i]]}`).text(lf[i]))
                 .append($("<td>").addClass(`i${sa[i]}`).text(sa[i]))
                 .append($("<td>").addClass(`i${sa[i]}`).text(psi[i]))
-                .append($("<td>").addClass(`i${sa[i]}`).text(bwt[i])));
+                .append($("<td>").addClass(`i${sa[psi[i]]}`).text(bwt[i])));
         }
         const reset = () => oCsaData.find(".hover").removeClass("hover");
         for (let i = 0; i < size; ++i) {
