@@ -15,6 +15,9 @@ title: >-
     td {
       text-align: right;
     }
+    td.hover {
+      background: #dfe;
+    }
   </style>
 description: >-
   JavaScript port of <a style='color: inherit' href='https://github.com/simongog/sdsl-lite'>Simon Gog's popular C++ library</a>

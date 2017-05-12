@@ -32,20 +32,26 @@ $(() => {
         oCsaData.append($("<tr>")
             .append($("<th>").text("i"))
             .append($("<th>").text("Text"))
-            .append($("<th>").text("SA"))
-            .append($("<th>").text("LF"))
             .append($("<th>").text("ISA"))
+            .append($("<th>").text("LF"))
+            .append($("<th>").text("SA"))
             .append($("<th>").text("PSI"))
             .append($("<th>").text("BWT")));
         for (let i = 0; i < size; ++i) {
             oCsaData.append($("<tr>")
                 .append($("<td>").text(`${i}`))
-                .append($("<td>").text(text.charAt(i) || nullString))
-                .append($("<td>").text(sa[i]))
-                .append($("<td>").text(lf[i]))
-                .append($("<td>").text(isa[i]))
-                .append($("<td>").text(psi[i]))
-                .append($("<td>").text(bwt[i])));
+                .append($("<td>").addClass(`i${i}`).text(text.charAt(i) || nullString))
+                .append($("<td>").addClass(`i${i}`).text(isa[i]))
+                .append($("<td>").addClass(`i${sa[lf[i]]}`).text(lf[i]))
+                .append($("<td>").addClass(`i${sa[i]}`).text(sa[i]))
+                .append($("<td>").addClass(`i${sa[i]}`).text(psi[i]))
+                .append($("<td>").addClass(`i${sa[i]}`).text(bwt[i])));
+        }
+        const reset = () => oCsaData.find(".hover").removeClass("hover");
+        for (let i = 0; i < size; ++i) {
+            const elems = oCsaData.find(`.i${i}`);
+            elems.mouseenter(() => { reset(); elems.addClass("hover"); });
+            elems.mouseleave(() => { reset(); });
         }
     };
     iText.on("input", update);
