@@ -2,6 +2,9 @@ theme: jekyll-theme-cayman
 title: >-
   Succinct Data Structure Library
   <style>
+    input {
+      width: calc(100% - 100px);
+    }
     input, button {
       height: 2em;
       padding: 4px;
