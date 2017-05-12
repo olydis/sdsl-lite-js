@@ -62,6 +62,8 @@
         "memory": "cpp",
         "*h*h__locale": "cpp",
         "codecvt": "cpp",
-        "*hpp*hpp*hpp*hpp*hpprandom": "cpp"
+        "*hpp*hpp*hpp*hpp*hpprandom": "cpp",
+        "*cpp__locale": "cpp",
+        "__locale": "cpp"
     }
 }

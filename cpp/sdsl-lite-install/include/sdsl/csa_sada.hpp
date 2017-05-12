@@ -372,17 +372,13 @@ cache_config& config)
 	}
 	{
 		auto event  = memory_monitor::event("sample SA");
-	std::cout << "2" << std::endl;
 		m_sa_sample = sa_sample_type(config);
-	std::cout << "2a" << std::endl;
 	}
 	{
 		auto			event = memory_monitor::event("sample ISA");
 		isa_sample_type isa_s(config, &m_sa_sample);
-	std::cout << "2b" << std::endl;
 		util::swap_support(m_isa_sample, isa_s, &m_sa_sample, (const sa_sample_type*)nullptr);
 	}
-	std::cout << "3" << std::endl;
 	// if ( config.delete_files ) {
 	//     remove_from_cache<int_vector<>>(conf::KEY_SA, config);
 	// }
@@ -403,13 +399,11 @@ cache_config& config)
 		}
 		register_cache_file(conf::KEY_PSI, config);
 	}
-	std::cout << "4" << std::endl;
 	{
 		auto				event = memory_monitor::event("encode PSI");
 		int_vector_buffer<> psi_buf(cache_file_name(conf::KEY_PSI, config));
 		m_psi = t_enc_vec(psi_buf);
 	}
-	std::cout << "5" << std::endl;
 }
 
 template <class t_enc_vec,
