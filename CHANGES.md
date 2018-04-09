@@ -1,6 +1,12 @@
-# __builtin bit count is faulty
+# __builtin_popcountll is buggy
 
-use manual one
+make sure
+
+```
+inline uint64_t bits_impl<T>::cnt(uint64_t x)
+```
+
+does not use `__builtin_popcountll`
 
 # Perf Hit of int_vector_buffer
 

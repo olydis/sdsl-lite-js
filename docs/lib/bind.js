@@ -28,3 +28,4 @@ var Tc=[VF,su,yu,tv,uv,Dv,Ev,VF];var Uc=[WF,Me,Ne,hf,jf,Bf,Cf,Pf,Qf,Xf,Yf,so,xo,
 
 
 if (ENVIRONMENT_IS_WEB) define([], function () { return Module; });
+if (ENVIRONMENT_IS_WEB) define([], function () { return Module; });
